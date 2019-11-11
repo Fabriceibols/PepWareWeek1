@@ -1,0 +1,42 @@
+﻿@using PepWareWeek1.Models
+@model IEnumerable<CakeModel>
+@{
+
+    Layout = null;
+}
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { }))
+{
+
+
+    <table class=" table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>
+                    Number Sold
+                </th>
+                <th>
+                    Total Sales Amount (at $5 per pc)
+                </th>
+                <th>
+                    Day
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CakeModel caake in Model)
+            {
+                <tr>
+
+                    <td>@caake.NumSold</td>
+                    <td>@((caake.NumSold)*5)</td>
+                    <td>@caake.Delux</td>
+
+                </tr>
+            }
+
+        </tbody>
+
+
+    </table>
+
+}
