@@ -1,0 +1,34 @@
+﻿@using PepWareWeek1.Models
+@model IEnumerable<CakeModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<ul class="nav nav-tabs">
+    <li class="active"> <a data-toggle="tab" href="#basicCupCakes">Basic Cupcakes</a></li>
+    <li> <a data-toggle="tab" href="#deluxeSales">Deluxe Cupcakes</a></li>
+    <li> <a data-toggle="tab" href="#totalSales">Total Sales</a></li>
+    <li> <a data-toggle="tab" href="#weeklySales">Weekly Sales</a></li>
+    <li> <a data-toggle="tab" href="#monthtlySales">Monthly Sales</a></li>
+    <li> <a data-toggle="tab" href="#annualSales">AnnualSales</a></li>
+</ul>
+<div class="tab-content">
+    <div id="basicCupCakes" class="tab-pane fade in active">@Html.Action("BasicCupcakes")</div>
+    <div id="deluxeSales" class="tab-pane fade in">@Html.Action("DeluxeSales")</div>
+    <div id="totalSales" class="tab-pane fade in">@Html.Action("TotalSales")</div>
+    <div id="weeklySales" class="tab-pane fade in">@Html.Action("WeeklySales")</div>
+    <div id="monthtlySales" class="tab-pane fade in">@Html.Action("MonthlySales")</div>
+    <div id="annualSales" class="tab-pane fade in">@Html.Action("AnnualSales")</div>
+</div>
+
+<input id="Restartbtn" class="btn btn-default" type="button" value="button" />
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+}
